@@ -1,0 +1,66 @@
+
+@font-face {
+    font-family: "Lato", sans-serif;
+    src: url('../assets/font/Lato/Lato-Black.ttf');
+  }
+@font-face {
+    font-family: "Lato", sans-serif;
+    src: url('../assets/font/Lato/Lato-BlackItalic.ttf');
+    font-weight: bold;
+  }
+@font-face {
+
+    font-family: "Lato", sans-serif;
+    src: url('../assets/font/Lato/Lato-Light.ttf');
+    font-weight:300;
+  }
+@font-face {
+    font-family: "Lato", sans-serif;
+    src: url('../assets/font/Lato/Lato-Regular.ttf');
+    font-weight: 400;
+  }
+@font-face {
+    font-family: "Lato", sans-serif;
+    src: url('../assets/font/Lato/Lato-Black.ttf');
+    font-weight: 500;
+  }
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url('../assets/font/Roboto/Roboto-Bold.ttf');
+    font-weight: bold;
+  }
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url('../assets/font/Roboto/Roboto-Italic.ttf');
+    font-weight: 400;
+  }
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url('../assets/font/Roboto/Roboto-Medium.ttf');
+    font-weight: 500;
+  }
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url('../assets/font/Roboto/Roboto-Regular.ttf');
+    font-weight: 400;
+  }
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url('../assets/font/Roboto/Roboto-Thin.ttf');
+  }
+
+
+  @font-face {
+    font-family: 'Inter', sans-serif;
+    src: local('Inter'),
+         url('../assets/font/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype'),
+         url('../assets/font/Inter/static/Inter-Black.ttf') format('truetype'),
+         url('../assets/font/Inter/static/Inter-Bold.ttf') format('truetype'),
+         url('../assets/font/Inter/static/Inter-ExtraBold.ttf') format('truetype'),
+         url('../assets/font/Inter/static/Inter-ExtraLight.ttf') format('truetype'),
+         url('../assets/font/Inter/static/Inter-Light.ttf') format('truetype'),
+         url('../assets/font/Inter/static/Inter-Medium.ttf') format('truetype'),
+         url('../assets/font/Inter/static/Inter-SemiBold.ttf') format('truetype'),
+         url('../assets/font/Inter/static/Inter-Thin.ttf') format('truetype');
+}
+
