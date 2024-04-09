@@ -12,14 +12,13 @@ a{
     text-decoration: none;
 }
 body{
-
-
+    font-family: "Poppins";
 }
 
 
 p, li, button, span, a{
     font-size: 14px;
-    font-family: "Inter", sans-serif;
+    font-family: "Poppins";
 }
 
 .title{
@@ -27,7 +26,7 @@ p, li, button, span, a{
     font-weight: 700;
     color: color.$primaryColor;
     font: normal normal 600 25px/28px Inter;
-    font-family: "Inter", sans-serif;
+    font-family: "Poppins";
     text-align: center;
     padding: 45px 0px;
     margin: 0;

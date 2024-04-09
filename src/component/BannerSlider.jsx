@@ -1,100 +1,57 @@
-// // Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// // Import Swiper styles
-// import 'swiper/css';
+import React, { useRef } from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import ButtonGroup from './MultiCarouselButtonGroup'; // Import the ButtonGroup component
 import Image from './Image';
-import sliderImg1 from '../assets/img/banner1.png'
-
-// const  BannerSlider = () => {
-//   return (
-//    <>
-//    <div className="carousel">
-//    <Swiper
-//     //   spaceBetween={50}
-//       slidesPerView={1}
-//       onSlideChange={() => console.log('slide change')}
-//       onSwiper={(swiper) => console.log(swiper)}
-//       navigation
-//       pagination={{ clickable: true }}
-//       scrollbar={{ draggable: true }}
-//       grabCursor={true}
-      
-//     >
-//       <SwiperSlide>
-//          <Image  imageUrl={sliderImg1}/>
-//       </SwiperSlide>
-//       <SwiperSlide>
-//          <Image  imageUrl={sliderImg1}/>
-//       </SwiperSlide>
-//       <SwiperSlide>
-//          <Image  imageUrl={sliderImg1}/>
-//       </SwiperSlide>
-//       {/* <SwiperSlide>Slide 2</SwiperSlide>
-//       <SwiperSlide>Slide 3</SwiperSlide>
-//       <SwiperSlide>Slide 4</SwiperSlide> */}
-     
-//     </Swiper>
-//    </div>
-//    </>
-//   );
-// };
-
-// export default  BannerSlider;
-
-import React from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import sliderImg1 from '../assets/img/banner.png'
+import sliderImg2 from '../assets/img/banner1.png'
 
 export default function BannerSlider() {
-  const renderCustomArrowPrev = (clickHandler, hasPrev, label) => {
-    return (
-      <button onClick={clickHandler} disabled={!hasPrev}>
-        Previous
-      </button>
-    );
+  const carouselRef = useRef(null);
+  const responsive = {
+    superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 1 },
+    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 1 },
+    tablet: { breakpoint: { max: 1024, min: 464 }, items:1 },
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
   };
 
-  const renderCustomArrowNext = (clickHandler, hasNext, label) => {
-    return (
-      <button onClick={clickHandler} disabled={!hasNext}>
-        Next
-      </button>
-    );
+  const handlePrevClick = () => {
+    if (carouselRef.current) {
+      carouselRef.current.previous();
+    }
   };
 
-  const handleSwipeMove = (index, direction, distance, duration, eventType) => {
-    console.log(`Swipe move detected: index=${index}, direction=${direction}, distance=${distance}, duration=${duration}, eventType=${eventType}`);
+  const handleNextClick = () => {
+    if (carouselRef.current) {
+      carouselRef.current.next();
+    }
   };
-
   return (
     <>
-      <Carousel 
-        // renderArrowPrev={renderCustomArrowPrev}
-        // renderArrowNext={renderCustomArrowNext}
-        onSwipeMove={handleSwipeMove}
-        infiniteLoop={true}
-        autoPlay={true}
-        interval={3000}
-        direction='left'
-        showStatus={false}
-        showThumbs={false} 
-        showArrows={true}
-        stopOnHover={false}
-        showIndicators= {true}
-      >
-        <div>
-        <Image  imageUrl={sliderImg1}/>
-       
-        </div>
-        <div>
-        <Image  imageUrl={sliderImg1}/>
-         
-        </div>
-        <div>
-        <Image  imageUrl={sliderImg1}/>
-         
-        </div>
-      </Carousel>
+      <div className="main-benner">
+      <Carousel
+              ref={carouselRef}
+              responsive={responsive}
+              infinite
+              customTransition="all .5s"
+              customTransitionTimingFunction="ease-in-out"
+              transitionDuration={500}
+              autoPlay={true}
+              arrows={false}
+              renderButtonGroupOutside={true}
+              customButtonGroup={<ButtonGroup />}>
+              <div>
+                <Image imageUrl={sliderImg1} />
+              </div>
+              <div>
+                <Image imageUrl={sliderImg2} />
+              </div>
+              {/* <div>
+                <Image imageUrl={sliderImg1} />
+              </div> */}
+              
+            </Carousel>
+      </div>
     </>
   );
 }
